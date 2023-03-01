@@ -285,7 +285,7 @@
         "type": "github"
       }
     },
-    "hackage": {
+    "hackageNix": {
       "flake": false,
       "locked": {
         "lastModified": 1677630516,
@@ -311,13 +311,14 @@
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils_2",
         "ghc-8.6.5-iohk": "ghc-8.6.5-iohk",
-        "hackage": "hackage",
+        "hackage": [
+          "hackageNix"
+        ],
         "hpc-coveralls": "hpc-coveralls",
         "hydra": "hydra",
         "iserv-proxy": "iserv-proxy",
         "nixpkgs": [
-          "haskellNix",
-          "nixpkgs-unstable"
+          "nixpkgs"
         ],
         "nixpkgs-2003": "nixpkgs-2003",
         "nixpkgs-2105": "nixpkgs-2105",
@@ -752,6 +753,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1677632419,
+        "narHash": "sha256-gjLx4O7LOPTaXdAnZ8swr0HiOWFu97p/5Hamgt06aV0=",
+        "owner": "peterbecich",
+        "repo": "nixpkgs",
+        "rev": "645175db2b2ecb4032005b2c24ff023d44cb6320",
+        "type": "github"
+      },
+      "original": {
+        "owner": "peterbecich",
+        "ref": "update-hackage",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nosys": {
       "locked": {
         "lastModified": 1667881534,
@@ -787,11 +804,9 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "hackageNix": "hackageNix",
         "haskellNix": "haskellNix",
-        "nixpkgs": [
-          "haskellNix",
-          "nixpkgs-unstable"
-        ]
+        "nixpkgs": "nixpkgs_5"
       }
     },
     "stackage": {
