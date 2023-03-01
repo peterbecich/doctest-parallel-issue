@@ -12,4 +12,7 @@ import Test.DocTest.Helpers
 main :: IO ()
 main = do
   args <- getArgs
-  pure ()
+  pkg  <- findCabalPackage "hello"
+  -- Need to give the library name, otherwise the parser does not find it.
+  lib  <- extractSpecificCabalLibrary (Just "lib-hello") pkg
+  mainFromLibrary lib args
